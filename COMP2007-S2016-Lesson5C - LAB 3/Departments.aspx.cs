@@ -33,7 +33,7 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
 
                 // query the Students Table using EF and LINQ
                 var Departments = (from allDepartments in db.Departments
-                                select allDepartments);
+                                   select allDepartments);
 
                 // bind the result to the GridView
                 DepartmentsGridView.DataSource = Departments.AsQueryable().OrderBy(SortString).ToList();
@@ -57,7 +57,26 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
                 Session["SortDirection"] = "ASC";
             }
 
-            GetDepartments();    
+            GetDepartments();
+        }
+
+        /**
+         * <summary>
+         * This event handler allows pagination to occur for the Students page
+         * </summary>
+         * 
+         * @method StudentsGridView_PageIndexChanging
+         * @param {object} sender
+         * @param {GridViewPageEventArgs} e
+         * @returns {void}
+         */
+        protected void DepartmentsGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            // Set the new page number
+            DepartmentsGridView.PageIndex = e.NewPageIndex;
+
+            // refresh the grid
+            GetDepartments();
         }
     }
 }
