@@ -8,7 +8,8 @@
                 <a href="DepartmentDetails.aspx" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>Add Department</a>
                 <asp:GridView ID="DepartmentsGridView" runat="server"
                     CssClass="table table-bordered table-striped table-hover"
-                    AutoGenerateColumns="false" DataKeyNames="DepartmentID">
+                    AutoGenerateColumns="false" DataKeyNames="DepartmentID" 
+                    AllowSorting="True" OnSorting="DepartmentsGridView_Sorting">
                     <Columns>
                         <asp:BoundField DataField="DepartmentID" HeaderText="Department ID" Visible="true" SortExpression="DepartmentID" />
                         <asp:BoundField DataField="Name" HeaderText="Name" Visible="true" SortExpression="Name" />
