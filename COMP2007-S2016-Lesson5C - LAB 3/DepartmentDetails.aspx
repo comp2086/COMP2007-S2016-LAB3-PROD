@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="DepartmentBudgetTextBox">Department Budget</label>
-                    <asp:TextBox runat="server" CssClass="form-control" ID="FirstNameTextBox" placeholder="Department Budget" required="true"></asp:TextBox>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="DepartmentBudgetTextBox" placeholder="Department Budget" required="true"></asp:TextBox>
                 </div>
                 <div class="text-right">
                     <asp:Button Text="Cancel" ID="CancelButton" CssClass="btn btn-warning btn-lg" runat="server" 
