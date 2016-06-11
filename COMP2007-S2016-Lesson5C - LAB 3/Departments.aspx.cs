@@ -119,6 +119,43 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
             this.GetDepartments();
 
         }
+
+        /**
+         * <summary>
+         * This event handler deletes a department from the db using EF
+         * </summary>
+         * 
+         * @method DepartmentsGridView_RowDeleting
+         * @param {object} sender
+         * @param {GridViewDeleteEventArgs} e
+         * @returns {void}
+         */
+        protected void DepartmentsGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            // store which row was clicked
+            int selectedRow = e.RowIndex;
+
+            // get the selected StudentID using the Grid's DataKey collection
+            int DepartmentID = Convert.ToInt32(DepartmentsGridView.DataKeys[selectedRow].Values["DepartmentID"]);
+
+            // use EF to find the selected student in the DB and remove it
+            using (DefaultConnection db = new DefaultConnection())
+            {
+                // create object of the Student class and store the query string inside of it
+                Department deletedDepartment = (from departmentRecords in db.Departments
+                                          where departmentRecords.DepartmentID == DepartmentID
+                                          select departmentRecords).FirstOrDefault();
+
+                // remove the selected student from the db
+                db.Departments.Remove(deletedDepartment);
+
+                // save my changes back to the database
+                db.SaveChanges();
+
+                // refresh the grid
+                this.GetDepartments();
+            }
+        }
     }
 }
  
