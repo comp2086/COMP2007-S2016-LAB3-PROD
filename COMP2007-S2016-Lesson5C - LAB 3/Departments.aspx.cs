@@ -19,11 +19,19 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
                 Session["SortColumn"] = "DepartmentID"; // default sort column
                 Session["SortDirection"] = "ASC";
 
-                // Get the student data
+                // Get the department data
                 GetDepartments();
             }
         }
 
+        /**
+         * <summary>
+         * This method gets the department data from the DB
+         * </summary>
+         * 
+         * @method GetDepartments
+         * @returns {void}
+         */
         protected void GetDepartments()
         {
             // connect to EF
@@ -41,6 +49,16 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
             }
         }
 
+        /**
+         * <summary>
+         * This event handler allows sorting to occur for the Departments page
+         * </summary>
+         * 
+         * @method DepartmentsGridView_PageIndexChanging
+         * @param {object} sender
+         * @param {GridViewPageEventArgs} e
+         * @returns {void}
+         */
         protected void DepartmentsGridView_Sorting(object sender, GridViewSortEventArgs e)
         {
             var nextSortColumn = e.SortExpression.ToString();
@@ -57,15 +75,18 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
                 Session["SortDirection"] = "ASC";
             }
 
+            // Redirect to the first page
+            DepartmentsGridView.PageIndex = 0;
+
             GetDepartments();
         }
 
         /**
          * <summary>
-         * This event handler allows pagination to occur for the Students page
+         * This event handler allows pagination to occur for the Departments page
          * </summary>
          * 
-         * @method StudentsGridView_PageIndexChanging
+         * @method DepartmentsGridView_PageIndexChanging
          * @param {object} sender
          * @param {GridViewPageEventArgs} e
          * @returns {void}
@@ -78,5 +99,26 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
             // refresh the grid
             GetDepartments();
         }
+
+        /**
+         * <summary>
+         * This event handler allows to change the pagesize of the Departments gridview
+         * </summary>
+         * 
+         * @method PageSizeDropDownList_SelectedIndexChanged
+         * @param {object} sender
+         * @param {EventArgs} e
+         * @returns {void}
+         */
+        protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Set the new Page size
+            DepartmentsGridView.PageSize = Convert.ToInt32(PageSizeDropDownList.SelectedValue);
+
+            // refresh the grid
+            this.GetDepartments();
+
+        }
     }
 }
+ 
