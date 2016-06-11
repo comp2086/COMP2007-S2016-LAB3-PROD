@@ -22,13 +22,13 @@ namespace COMP2007_S2016_Lesson5C___LAB_3 {
         protected global::System.Web.UI.WebControls.TextBox DepartmentNameTextBox;
         
         /// <summary>
-        /// FirstNameTextBox control.
+        /// DepartmentBudgetTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FirstNameTextBox;
+        protected global::System.Web.UI.WebControls.TextBox DepartmentBudgetTextBox;
         
         /// <summary>
         /// CancelButton control.

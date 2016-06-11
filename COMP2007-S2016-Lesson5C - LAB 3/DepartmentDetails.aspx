@@ -12,11 +12,11 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="DepartmentBudgetTextBox">Department Budget</label>
-                    <asp:TextBox runat="server" CssClass="form-control" ID="FirstNameTextBox" placeholder="Department Budget" required="true"></asp:TextBox>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="DepartmentBudgetTextBox" placeholder="Department Budget" required="true"></asp:TextBox>
                 </div>
                 <div class="text-right">
                     <asp:Button Text="Cancel" ID="CancelButton" CssClass="btn btn-warning btn-lg" runat="server" 
-                        UseSubmitBehavior="false" CausesValidation="false" OnClick="CancelButton_click" />
+                        UseSubmitBehavior="false" CausesValidation="false" OnClick="CancelButton_Click" />
                     <asp:Button Text="Save" ID="SaveButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="SaveButton_Click" />
                 </div>
             </div>

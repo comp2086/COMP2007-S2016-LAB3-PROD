@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Tom\Documents\COMP2007\COMP2007_S2016_Lesson5C___LAB_3\COMP2007_S2016_Lesson5C___LAB_3\Models\ContosoModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\anthony\Desktop\Enterprise Computing\lab3\code\COMP2007-S2016-Lesson5C - LAB 3\COMP2007-S2016-Lesson5C - LAB 3\Models\ContosoModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

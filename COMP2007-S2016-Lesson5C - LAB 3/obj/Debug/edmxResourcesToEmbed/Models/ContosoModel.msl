@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ContosoModelStoreContainer" CdmEntityContainer="DefaultConnection">
     <EntitySetMapping Name="Courses">
-      <EntityTypeMapping TypeName="ContosoModel.Course">
+      <EntityTypeMapping TypeName="IsTypeOf(ContosoModel.Course)">
         <MappingFragment StoreEntitySet="Courses">
           <ScalarProperty Name="CourseID" ColumnName="CourseID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Departments">
-      <EntityTypeMapping TypeName="ContosoModel.Department">
+      <EntityTypeMapping TypeName="IsTypeOf(ContosoModel.Department)">
         <MappingFragment StoreEntitySet="Departments">
           <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -21,7 +21,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Enrollments">
-      <EntityTypeMapping TypeName="ContosoModel.Enrollment">
+      <EntityTypeMapping TypeName="IsTypeOf(ContosoModel.Enrollment)">
         <MappingFragment StoreEntitySet="Enrollments">
           <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
           <ScalarProperty Name="CourseID" ColumnName="CourseID" />
@@ -31,7 +31,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Students">
-      <EntityTypeMapping TypeName="ContosoModel.Student">
+      <EntityTypeMapping TypeName="IsTypeOf(ContosoModel.Student)">
         <MappingFragment StoreEntitySet="Students">
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />

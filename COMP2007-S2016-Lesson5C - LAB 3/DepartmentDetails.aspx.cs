@@ -33,15 +33,15 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
             using (DefaultConnection db = new DefaultConnection())
             {
                 // populate a department object instance with the DepartmentID from the URL Parameter
-                Department department = (from department in db.Departments
+                Department newDepartment = (from department in db.Departments
                                           where department.DepartmentID == DepartmentID
                                           select department).FirstOrDefault();
 
                 // map the department properties to the form controls
-                if (department != null)
+                if (newDepartment != null)
                 {
-                    DepartmentNameTextBox.Text = department.Name;
-                    DepartmentBudgetTextBox.Text = department.Budget;
+                    DepartmentNameTextBox.Text = newDepartment.Name;
+                    DepartmentBudgetTextBox.Text = Convert.ToString(newDepartment.Budget);
                 }
             }
         }
@@ -81,7 +81,7 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
 
                 // add form data to the new student record
                 newDepartment.Name = DepartmentNameTextBox.Text;
-                newDepartment.Budget = DepartmentBudgetTextBox.Text;
+                newDepartment.Budget = Convert.ToDecimal(DepartmentBudgetTextBox.Text);
 
                 // use LINQ to ADO.NET to add / insert new student into the database
 
