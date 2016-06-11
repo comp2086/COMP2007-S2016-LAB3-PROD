@@ -156,6 +156,37 @@ namespace COMP2007_S2016_Lesson5C___LAB_3
                 this.GetDepartments();
             }
         }
+
+        protected void DepartmentsGridView_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            var prevSortColumn = Session["SortColumn"].ToString();
+            var prevSortDirection = Session["SortDirection"].ToString();
+
+            if (IsPostBack)
+            {
+                if (e.Row.RowType == DataControlRowType.Header) // if header row has been clicked
+                {
+                    LinkButton linkbutton = new LinkButton();
+
+                    for (int index = 0; index < DepartmentsGridView.Columns.Count - 1; index++)
+                    {
+                        if (DepartmentsGridView.Columns[index].SortExpression == prevSortColumn)
+                        {
+                            if (prevSortDirection == "ASC")
+                            {
+                                linkbutton.Text = " <i class='fa fa-caret-up fa-lg'></i>";
+                            }
+                            else
+                            {
+                                linkbutton.Text = " <i class='fa fa-caret-down fa-lg'></i>";
+                            }
+
+                            e.Row.Cells[index].Controls.Add(linkbutton);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
  

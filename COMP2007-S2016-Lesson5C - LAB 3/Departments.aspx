@@ -22,7 +22,7 @@
                     AutoGenerateColumns="false" DataKeyNames="DepartmentID"
                     AllowSorting="True" OnSorting="DepartmentsGridView_Sorting"
                     AllowPaging="True" PageSize="3" OnPageIndexChanging="DepartmentsGridView_PageIndexChanging"
-                    PagerStyle-CssClass="pagination-ys" OnRowDeleting="DepartmentsGridView_RowDeleting">
+                    PagerStyle-CssClass="pagination-ys" OnRowDataBound="DepartmentsGridView_RowDataBound" OnRowDeleting="DepartmentsGridView_RowDeleting">
                     <Columns>
                         <asp:BoundField DataField="DepartmentID" HeaderText="Department ID" Visible="true" SortExpression="DepartmentID" />
                         <asp:BoundField DataField="Name" HeaderText="Name" Visible="true" SortExpression="Name" />
